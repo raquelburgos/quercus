@@ -1,0 +1,97 @@
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{eurosym} % para el euro
+\usepackage[textwidth=12cm,centering]{geometry}
+\usepackage[x11names]{xcolor}
+\usepackage{background}
+
+\newcommand{\vcenteredinclude}[1]{\begingroup
+\setbox0=\hbox{\includegraphics{#1}}%
+\parbox{\wd0}{\box0}\endgroup}
+
+\newcommand*\wb[3]{%
+  {\fontsize{#1}{#2}\usefont{U}{webo}{xl}{n}#3}}
+
+% The page frame
+\SetBgColor{Goldenrod3}
+\SetBgAngle{0}
+\SetBgScale{1}
+\SetBgOpacity{1}
+\SetBgContents{%
+\begin{tikzpicture}
+\node at (0.5\paperwidth,0) {\wb{80}{34}{}\rule[60pt]{.2\textwidth}{0.4pt}%
+  \raisebox{55pt}{%
+  \makebox[.6\textwidth]{\ \fontsize{20}{27}\selectfont\scshape Carta de Otoño }}%
+  \rule[60pt]{.2\textwidth}{0.4pt}\wb{80}{34}{}};
+\node at (2,-0.5\textheight) {\rule{0.4pt}{.8\textheight}};
+\node at (19.5,-0.5\textheight) {\rule{0.4pt}{.8\textheight}};
+\node at (0.5\paperwidth,-\textheight) {\wb{80}{34}{}\rule[-10pt]{\textwidth}{0.4pt}\wb{80}{34}{}} ;
+\end{tikzpicture}%
+}
+
+% colorize text
+\newcommand*\ColText[1]{\textcolor{Goldenrod3}{#1}}
+
+% a tabular* for each food group
+\newenvironment{Group}[1]
+  {\noindent\begin{tabular*}{\textwidth}{@{}p{.8\linewidth}@{\extracolsep{\fill}}r@{}}
+    {\fontsize{24}{29}\selectfont\ColText{#1}}\\[0.8em]}
+  {\end{tabular*}}
+
+% to format each entry
+\newcommand*\Entry[2]{%
+  \sffamily#1 & #2}  
+
+% to format each subentry
+\newcommand*\Expl[1]{%
+  \hspace*{1em}\footnotesize #1}
+
+
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{Group}{Para empezar}
+\Entry{Falafel con lechuga de la huerta  \vcenteredinclude{icon.png}}{3,49\euro} \\
+\Entry{Degustación de \emph{Patés vegetarianos}\vcenteredinclude{icon.png}}{4,98\euro} \\
+\Entry{Ensalada \emph{Quercus}\vcenteredinclude{icon.png}}{6,64\euro} \\
+\Entry{Témpura de verduras\vcenteredinclude{icon.png}}{4,98\euro} \\
+\Entry{Parrillada de verduras\vcenteredinclude{icon.png}}{3,32\euro}\\
+\end{Group}
+
+\vfill
+
+\begin{Group}{Primeros Platos}
+\Entry{Falsos escalopines de tofu al pesto}{8,31\euro} \\ 
+\Entry{Risotto de setas de temporada y espárragos trigueros}{9,97\euro} \\ 
+\Entry{Patatas revolconas de seitán\vcenteredinclude{icon.png}}{9,97\euro} \\ 
+\Entry{Revuelto de setas de temporada}{11,63\euro} \\ 
+\Entry{Huevo roto sobre soja texturizada adobada}{4,98\euro} \\ 
+\end{Group}
+
+\vfill
+
+\begin{Group}{Segundos Platos}
+\Entry{Falso cordón blue de seitán con salsa de piquillo}{18,27\euro} \\ 
+\Entry{Hamburguesa de lentejas con arroz\vcenteredinclude{icon.png}}{8,31\euro} \\ 
+\Entry{Hamburguesa de zanahoria\vcenteredinclude{icon.png}}{8,31\euro} \\ 
+\Entry{Falso escalope de seitán a la mostaza con nido de patata paja y huevo mollet}{9,97\euro} \\ 
+\Entry{Moussaka}{9,97\euro} \\ 
+\Entry{Canelones de berenjena rellenos de pisto con pastel de patatas}{4,98\euro} \\ 
+\Entry{Lasaña de setas}{14,95\euro} \\ 
+\end{Group}
+
+\vfill
+
+\begin{Group}{Postres}
+\Entry{Helado de uvas}{3,32\euro} \\
+\Entry{Tiramisú}{10,13\euro} \\
+\Entry{Brownie con helado de vainilla}{12,13\euro} \\
+\Entry{Batido de frutos del bosque\vcenteredinclude{icon.png}}{4,98\euro} \\
+\Entry{Batido de uvas\vcenteredinclude{icon.png}}{3,32\euro} \\
+\end{Group}
+
+\end{document}
