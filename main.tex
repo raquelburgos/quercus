@@ -1,0 +1,97 @@
+\documentclass[oneside]{arco-pfc}
+\usepackage{custom}
+\usepackage{metadata}
+\usepackage{eurosym} % para el euro
+\usepackage{multirow} % para las tablas
+\usepackage{hyperref}
+\usepackage{pdfpages}
+
+\newcommand{\vcenteredinclude}[1]{\begingroup
+\setbox0=\hbox{\includegraphics{#1}}%
+\parbox{\wd0}{\box0}\endgroup}
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\newcommand*{\rotrt}[1]{\rotatebox{90}{#1}} % Command to rotate right 90 degrees
+\newcommand*{\rotlft}[1]{\rotatebox{-90}{#1}} % Command to rotate left 90 degrees
+
+\newcommand*{\titleBC}{\begingroup % Create the command for including the title page in the document
+\centering % Center all text
+\vfill
+\def\CP{\textit{\Huge Quercus Pyrenaica}} % Title
+
+\settowidth{\unitlength}{\CP} % Set the width of the curly brackets to the width of the title
+{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotrt{$\}$}}} \\[\baselineskip] % Print top curly bracket
+\textcolor{Sienna}{\CP} \\[\baselineskip] % Print title
+{\color{RosyBrown}\Large Plan de Empresa} \\ % Tagline or further description
+{\color{LightGoldenrod}\resizebox*{\unitlength}{\baselineskip}{\rotlft{$\}$}}} % Print bottom curly bracket
+\vfill
+\begin{figure}[h]
+  \begin{center}
+    \includegraphics[scale=0.4]{logos/borrador1.png}
+  \end{center}
+\end{figure}
+\vfill % Whitespace between the title and the author name
+
+{\Large\textbf{Jesús Burgos Plaza}}\\ % Author name
+\vfill % Whitespace between the author name and the publisher logo
+
+Escuela Superior de Gastronomía Y Hostelería de Toledo\\
+Febrero de 2014 % Year published
+
+\endgroup}
+
+\begin{document}
+
+\input{portada.tex}
+
+\frontmatter
+
+%\input{resumen.tex}
+%\input{abstract.tex}
+
+\tableofcontents
+%\listoftables
+\listoffigures
+\listoftables
+%\lstlistoflistings
+%\input{acronimos.tex}
+%\input{agradecimientos.tex}
+\dedication{"La responsabilidad del cocinero está enfocada al respeto de los recursos del planeta y de consumirlos de manera sostenible.
+Intentar usar los pescados más sostenibles, consumir menos proteína animal, más cereal, enfocarse más en la nutrición. 
+Y por la salud del consumidor, intentar comer menos sal, menos grasa y menos azúcar. Ser lo más cercano a la naturaleza".
+\\ Alain Ducasse }
+
+
+\mainmatter
+%\input{portada.tex}
+\input{presentacion.tex}
+\input{estudioMercado.tex}
+\input{planMarketing.tex}
+\input{planRRHH.tex}
+\input{analisisViabilidad.tex}
+\input{planProduccion.tex}
+
+\appendix
+\appendixtitle
+\input{encuestas.tex}
+\input{curriculum.tex}
+\input{planos.tex}
+\input{pasos.tex}
+\input{recetas.tex}
+\input{valoracionPlatos.tex}
+\input{tramites.tex}
+\input{tramites2.tex}
+\input{puntosInteres.tex}
+\input{bibliografia.tex}
+
+
+%\backmatter
+%\bibliography{main}
+%\cleardoublepage
+
+\end{document}

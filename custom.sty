@@ -1,0 +1,80 @@
+\usepackage{multicol}
+\usepackage{fancybox}
+\usepackage[right]{eurosym}     % Símbolo euro
+% \hypersetup{colorlinks=true,urlcolor=blue}
+
+%% -- Información general
+\title{PLAN DE EMPRESA: Quercus Pyrenaica}
+\author{Jesús Burgos Plaza}{}
+
+\renewcommand{\mainchapterformat}{
+  \newlength{\numberwidth}
+  \newcommand{\chapternumberbg}{\fontsize{130}{90}\selectfont\bfseries\thechapter}
+  \newcommand{\chapternumberfg}{\fontsize{90}{90}\selectfont\bfseries\thechapter}
+
+  \titleformat{\chapter}[display]
+    {}
+    {\hfill
+      \textcolor{gray97}\chapternumberbg
+      \settowidth{\numberwidth}{\chapternumberbg}
+      \addtolength{\numberwidth}{7pt}
+      \hspace{-\numberwidth}
+      \textcolor{gray75}\chapternumberfg
+      \hspace{0.5cm}
+    }
+    {-2.5cm}
+    {\chapterformat}
+
+  \titlespacing{\chapter}{-1cm}{1cm}{3.8cm}[-1.4cm]
+}
+\lstset{%
+     frame              = Ltb,
+     framerule          = 0pt,
+     %aboveskip         = .5cm,
+     belowskip          = 2mm,
+     framextopmargin    = 3pt,
+     framexbottommargin = 3pt,
+     framexleftmargin   = 0.4cm,
+     framesep           = 0pt,
+     rulesep            = 0pt,
+     backgroundcolor    = \color{gray95},
+     rulesepcolor       = \color{black},
+     captionpos         = b,
+     %
+     basicstyle         = \footnotesize\lstfont,
+     %stringstyle       = \ttfamily,
+     showstringspaces   = false,
+     commentstyle       = \color{gray45},
+     keywordstyle       = \bfseries,
+     %
+     numbers            = none,
+     stepnumber         = 1,
+     numbersep          = 15pt,
+     numberstyle        = \scriptsize,
+     %numberfirstline   = false,
+     numberblanklines   = false,
+     %
+     breaklines         = true,
+     lineskip           = -1pt
+   }
+
+\lstdefinelanguage{Slice}{%
+  morekeywords=[2]{void, bool, byte, short, int, float, sequence, string,
+    dictionary, Object, Topic},
+  morekeywords=[3]{module, interface, struct, class, exception,
+    throws, extends, idempotent},
+  morekeywords=[4]{in, out},
+  morekeywords=[5]{include},
+  sensitive=false
+  }
+
+
+
+
+%% -- Configuración específica
+\lstloadlanguages{[ISO]C++, Python, XML}
+\def\arcopfc{\emph{arco-pfc}}
+\def\datar{\texttt{DataReader}}
+\def\dataw{\texttt{DataWriter}}
+
+\hyphenation{middleware}
